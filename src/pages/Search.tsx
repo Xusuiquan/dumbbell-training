@@ -38,7 +38,7 @@ export function Search({
         <>
           <h2 className="section-title">{t('recentSearches')}</h2>
           <div className="filter-row static-tags">
-            {['哑铃飞鸟', '单臂哑铃划船', '背部'].map((x) => (
+            {['哑铃卧推', '侧平举', '背部'].map((x) => (
               <span className="chip" key={x}>
                 {text(x)}
               </span>
@@ -46,7 +46,7 @@ export function Search({
           </div>
           <h2 className="section-title">{t('popularSearches')}</h2>
           <div className="filter-row static-tags">
-            {['哑铃飞鸟', '单臂哑铃划船', '胸部', '背部'].map((x) => (
+            {['哑铃卧推', '哑铃推举', '胸部', '肩部'].map((x) => (
               <span className="chip" key={x}>
                 {text(x)}
               </span>
