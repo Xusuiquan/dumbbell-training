@@ -1,0 +1,247 @@
+.section-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-row .section-title {
+  margin-bottom: 12px;
+}
+.section-row a {
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.recommend-card {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 9px;
+}
+.recommend-card > div:nth-child(2) {
+  flex: 1;
+}
+.recommend-card strong {
+  font-size: 15px;
+}
+.recommend-card p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 6px 0 0;
+}
+.filter-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin: 0 -16px;
+  padding: 0 16px;
+}
+.exercise-list {
+  margin-top: 16px;
+}
+.home-exercise-results {
+  margin-top: 28px;
+}
+.home-exercise-results .section-title {
+  margin-top: 0;
+}
+.home-exercise-results .empty {
+  margin: 32px 0 0;
+}
+.detail-head {
+  display: flex;
+  align-items: center;
+}
+.detail-head .app-header {
+  flex: 1;
+  margin: 0;
+}
+.detail-head .app-header h1 {
+  font-size: 20px;
+}
+.detail-head .icon-button {
+  color: var(--text-secondary);
+}
+.detail-head .icon-button.saved {
+  color: var(--text-primary);
+}
+.tag-row {
+  display: flex;
+  gap: 6px;
+  margin: 11px 0 16px;
+}
+.pose-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.pose-grid p {
+  text-align: center;
+  font-size: 12px;
+  margin: 8px 0;
+  color: var(--text-secondary);
+}
+.muscles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.muscle {
+  min-height: 78px;
+  padding: 12px 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.muscle span {
+  color: #ee5e43;
+  font-size: 18px;
+}
+.steps,
+.bullet-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.steps {
+  counter-reset: step;
+}
+.steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 9px;
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.steps li:before {
+  content: counter(step);
+  width: 20px;
+  height: 20px;
+  background: var(--ink);
+  color: var(--surface);
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  font-size: 12px;
+  font-weight: 800;
+  margin-top: 1px;
+}
+.bullet-list li {
+  font-size: 14px;
+  margin: 0 0 9px;
+  display: flex;
+  gap: 9px;
+}
+.bullet-list li:before {
+  content: '•';
+  font-weight: bold;
+}
+.recommendation {
+  display: flex;
+  gap: 8px;
+}
+.recommendation span {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 10px;
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+}
+.search-box {
+  height: 46px;
+  background: var(--surface-secondary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 13px;
+  color: var(--text-secondary);
+}
+.search-box input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-primary);
+  min-width: 0;
+  width: 100%;
+  font-size: 14px;
+}
+.static-tags {
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.empty {
+  text-align: center;
+  color: var(--text-secondary);
+  margin: 80px 0;
+}
+.settings {
+  overflow: hidden;
+}
+.setting-row {
+  min-height: 54px;
+  padding: 0 15px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+.setting-row:last-child {
+  border: 0;
+}
+.setting-row > span {
+  flex: 1;
+}
+.setting-row > div {
+  color: var(--text-secondary);
+}
+.switch {
+  width: 43px;
+  height: 25px;
+  border: 0;
+  border-radius: 99px;
+  background: #c9c9cc;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+}
+.switch i {
+  width: 19px;
+  height: 19px;
+  background: white;
+  border-radius: 50%;
+  display: block;
+  transition: transform 0.2s;
+}
+.switch.on {
+  background: var(--ink);
+}
+.switch.on i {
+  transform: translateX(18px);
+}
+.language-switch {
+  min-width: 62px;
+  border: 0;
+  border-radius: 8px;
+  padding: 7px 9px;
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
