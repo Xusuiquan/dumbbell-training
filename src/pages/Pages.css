@@ -134,6 +134,7 @@
   overflow-y: auto;
   padding: 0 1px 16px;
   scrollbar-width: none;
+  touch-action: pan-y;
   animation: detail-panel-in 160ms ease-out;
 }
 .detail-panel::-webkit-scrollbar {

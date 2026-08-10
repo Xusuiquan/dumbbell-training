@@ -1,6 +1,6 @@
 import { Star } from 'lucide-react'
 import type { ReactNode } from 'react'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppHeader } from '../components/AppHeader/AppHeader'
 import { ExerciseIllustration } from '../components/ExerciseIllustration/ExerciseIllustration'
@@ -15,10 +15,19 @@ export function ExerciseDetail({
   onToggle: (id: string) => void
 }) {
   const [activeTab, setActiveTab] = useState<'guide' | 'details'>('guide')
+  const swipeStart = useRef<{ x: number; y: number } | null>(null)
   const { id } = useParams()
   const exercise = exercises.find((item) => item.id === id) ?? exercises[0]
   const saved = favorites.includes(exercise.id)
   const { t, text } = useLanguage()
+  const handleTouchEnd = (x: number, y: number) => {
+    if (!swipeStart.current) return
+    const deltaX = x - swipeStart.current.x
+    const deltaY = y - swipeStart.current.y
+    swipeStart.current = null
+    if (Math.abs(deltaX) < 56 || Math.abs(deltaX) <= Math.abs(deltaY)) return
+    setActiveTab(deltaX < 0 ? 'details' : 'guide')
+  }
   return (
     <main className="page detail">
       <div className="detail-head">
@@ -50,7 +59,18 @@ export function ExerciseDetail({
         </button>
       </div>
       {activeTab === 'guide' ? (
-        <div className="detail-panel" role="tabpanel">
+        <div
+          className="detail-panel"
+          role="tabpanel"
+          onTouchStart={(event) => {
+            const touch = event.touches[0]
+            swipeStart.current = { x: touch.clientX, y: touch.clientY }
+          }}
+          onTouchEnd={(event) => {
+            const touch = event.changedTouches[0]
+            handleTouchEnd(touch.clientX, touch.clientY)
+          }}
+        >
           <div className="pose-grid">
             <div>
               <ExerciseIllustration label={t('startPosition')} src={exercise.startImage} />
@@ -73,7 +93,18 @@ export function ExerciseDetail({
           </DetailSection>
         </div>
       ) : (
-        <div className="detail-panel" role="tabpanel">
+        <div
+          className="detail-panel"
+          role="tabpanel"
+          onTouchStart={(event) => {
+            const touch = event.touches[0]
+            swipeStart.current = { x: touch.clientX, y: touch.clientY }
+          }}
+          onTouchEnd={(event) => {
+            const touch = event.changedTouches[0]
+            handleTouchEnd(touch.clientX, touch.clientY)
+          }}
+        >
           <DetailSection title={t('steps')}>
             <ol className="steps">
               {exercise.steps.map((step) => (
