@@ -45,7 +45,34 @@
 .home-exercise-results {
   margin-top: 28px;
 }
+.home-page {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.home-body-part-picker {
+  flex: none;
+}
+.home-exercise-results {
+  min-height: 0;
+  flex: 1;
+  overflow-y: auto;
+  margin-right: -16px;
+  margin-bottom: -16px;
+  margin-left: -16px;
+  padding: 0 16px 16px;
+  scrollbar-width: none;
+}
+.home-exercise-results::-webkit-scrollbar {
+  display: none;
+}
 .home-exercise-results .section-title {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 1px 0 12px;
+  background: var(--bg);
   margin-top: 0;
 }
 .home-exercise-results .empty {

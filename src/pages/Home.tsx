@@ -21,15 +21,19 @@ export function Home({
     ? `${text(selectedBodyPart)}${t('training')}`
     : t('allExercises')
   return (
-    <main className="page">
-      <AppHeader title={t('appName')} tab />
-      <h2 className="section-title">{t('selectBodyPart')}</h2>
-      <BodyPartGrid
-        selectedBodyPart={selectedBodyPart}
-        onSelect={(bodyPart) =>
-          setSelectedBodyPart((currentBodyPart) => (currentBodyPart === bodyPart ? null : bodyPart))
-        }
-      />
+    <main className="page home-page">
+      <div className="home-body-part-picker">
+        <AppHeader title={t('appName')} tab />
+        <h2 className="section-title">{t('selectBodyPart')}</h2>
+        <BodyPartGrid
+          selectedBodyPart={selectedBodyPart}
+          onSelect={(bodyPart) =>
+            setSelectedBodyPart((currentBodyPart) =>
+              currentBodyPart === bodyPart ? null : bodyPart,
+            )
+          }
+        />
+      </div>
       <section className="home-exercise-results">
         <h2 className="section-title">{resultTitle}</h2>
         {selectedExercises.map((exercise) => (
