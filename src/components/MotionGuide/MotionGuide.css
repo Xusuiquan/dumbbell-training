@@ -27,14 +27,14 @@
 .motion-stage-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .motion-stage {
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(138px, 43%) 1fr;
-  min-height: 186px;
+  grid-template-columns: minmax(128px, 40%) 1fr;
+  min-height: 164px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -43,7 +43,7 @@
 
 .motion-stage-figure {
   position: relative;
-  min-height: 186px;
+  min-height: 164px;
   overflow: hidden;
   background: #fff;
   border-right: 1px solid var(--border);
@@ -73,11 +73,11 @@
 
 .motion-stage-number {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 10px;
+  left: 10px;
   z-index: 2;
-  min-width: 34px;
-  padding: 6px 8px;
+  min-width: 32px;
+  padding: 5px 7px;
   border-radius: 999px;
   background: rgb(17 17 17 / 88%);
   color: #fff;
@@ -90,7 +90,7 @@
 
 .motion-stage-copy {
   min-width: 0;
-  padding: 18px 15px 18px 17px;
+  padding: 13px 14px 13px 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -166,7 +166,7 @@
 
 @media (max-width: 350px) {
   .motion-stage {
-    grid-template-columns: 124px 1fr;
+    grid-template-columns: 116px 1fr;
   }
 
   .form-cue-list {

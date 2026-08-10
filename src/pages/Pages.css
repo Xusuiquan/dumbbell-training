@@ -168,29 +168,6 @@
   margin: 8px 0;
   color: var(--text-secondary);
 }
-.muscles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-.muscle {
-  min-height: 78px;
-  padding: 12px 6px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 12px;
-  text-align: center;
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-}
-.muscle span {
-  color: #ee5e43;
-  font-size: 18px;
-}
 .steps,
 .bullet-list {
   padding: 0;

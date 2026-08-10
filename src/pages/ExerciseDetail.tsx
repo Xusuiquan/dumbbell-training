@@ -91,16 +91,6 @@ export function ExerciseDetail({
               </div>
             </div>
           )}
-          <DetailSection title={t('targetMuscles')}>
-            <div className="muscles">
-              {exercise.targetMuscles.map((item) => (
-                <div className="muscle" key={item}>
-                  <span>●</span>
-                  {text(item)}
-                </div>
-              ))}
-            </div>
-          </DetailSection>
         </div>
       ) : (
         <div
