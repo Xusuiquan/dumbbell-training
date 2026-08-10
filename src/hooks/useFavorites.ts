@@ -9,11 +9,14 @@ const initial = (): string[] => {
 }
 export function useFavorites() {
   const [favorites, setFavorites] = useState<string[]>(initial)
-  const toggleFavorite = (id: string) =>
+  const toggleFavorite = (id: string) => {
+    const willSave = !favorites.includes(id)
     setFavorites((current) => {
       const next = current.includes(id) ? current.filter((item) => item !== id) : [...current, id]
       localStorage.setItem(key, JSON.stringify(next))
       return next
     })
+    return willSave
+  }
   return { favorites, toggleFavorite }
 }

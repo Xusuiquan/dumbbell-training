@@ -40,5 +40,5 @@
   padding: 7px;
 }
 .favorite-button.saved {
-  color: var(--text-primary);
+  color: var(--favorite);
 }

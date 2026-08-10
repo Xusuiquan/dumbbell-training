@@ -66,7 +66,7 @@
   color: var(--text-secondary);
 }
 .detail-head .icon-button.saved {
-  color: var(--text-primary);
+  color: var(--favorite);
 }
 .tag-row {
   display: flex;

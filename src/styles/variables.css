@@ -6,6 +6,7 @@
   --text-secondary: #777;
   --border: #e8e8e8;
   --ink: #111;
+  --favorite: #eab308;
   --shadow: 0 8px 24px rgb(0 0 0 / 4%);
 }
 [data-theme='dark'] {
@@ -16,5 +17,6 @@
   --text-secondary: #999;
   --border: #303030;
   --ink: #f5f5f5;
+  --favorite: #facc15;
   --shadow: none;
 }
