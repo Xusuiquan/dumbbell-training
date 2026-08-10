@@ -55,6 +55,8 @@ const translations = {
     exerciseContent: '动作内容',
     exerciseGuide: '动作图解',
     trainingDetails: '训练要点',
+    fullMovement: '动作全程',
+    formCheckpoints: '姿势要点',
     training: '训练',
     allExercises: '全部',
     noExercises: '该部位暂未收录动作',
@@ -108,6 +110,8 @@ const translations = {
     exerciseContent: 'Exercise content',
     exerciseGuide: 'Visual guide',
     trainingDetails: 'Training details',
+    fullMovement: 'Full movement',
+    formCheckpoints: 'Form checkpoints',
     training: ' Training',
     allExercises: 'All',
     noExercises: 'No exercises have been added for this body part yet',
@@ -149,6 +153,50 @@ const exerciseText: Record<string, string> = {
   胸大肌下部: 'Lower Chest',
   背阔肌: 'Latissimus Dorsi',
   菱形肌: 'Rhomboids',
+  起始站姿: 'Start stance',
+  俯身准备: 'Hinge setup',
+  开始打开: 'Open the arms',
+  顶峰收缩: 'Peak contraction',
+  控制回落: 'Controlled return',
+  '核心收紧，胸部打开，哑铃自然下垂':
+    'Brace your core, open your chest, and let the dumbbells hang naturally.',
+  '髋部后折，膝盖微屈，背部保持平直':
+    'Hinge at the hips, soften your knees, and keep your back flat.',
+  '以肩关节为主导，手肘微屈向两侧展开':
+    'Lead from the shoulders and open both arms with a soft bend in the elbows.',
+  '手臂展至躯干两侧，感受肩后束主动发力':
+    'Open the arms beside your torso and feel the rear delts drive the movement.',
+  '保持躯干稳定，缓慢下放并持续保持张力':
+    'Keep the torso steady, lower slowly, and maintain tension.',
+  保持中立脊柱: 'Keep a neutral spine',
+  '全程背部平直，核心收紧，避免弓背或塌腰':
+    'Keep your back flat and core braced without rounding or overextending.',
+  肩胛稳定后收: 'Retract stable shoulder blades',
+  '肩膀下沉，肩胛骨稳定，顶峰更好孤立后肩':
+    'Keep the shoulders down and blades stable to isolate the rear delts at the top.',
+  肘部微屈固定: 'Keep a fixed soft elbow',
+  '肘部角度全程不变，减少小臂和关节代偿':
+    'Keep the elbow angle unchanged to reduce forearm and joint compensation.',
+  '肩后束 · 上背部': 'Rear delts · Upper back',
+  '顶峰稍停，感受目标肌肉发力，控制节奏':
+    'Pause briefly at the top, feel the target muscles, and control the tempo.',
+  '双脚与髋同宽站立，核心收紧，胸部打开，哑铃自然下垂。':
+    'Stand hip-width apart, brace your core, open your chest, and let the dumbbells hang naturally.',
+  '髋部后折，身体前倾，膝盖微屈，保持背部自然中立。':
+    'Hinge at the hips with a soft bend in the knees and keep your back naturally neutral.',
+  '手肘保持微屈，以肩关节为主导，双臂向身体两侧打开。':
+    'Keep a soft bend in the elbows and open both arms to the sides from the shoulder joints.',
+  '手臂展开至与肩同高或略低，顶峰收紧，感受肩后束与上背发力。':
+    'Open the arms to shoulder height or slightly below, then squeeze the rear delts and upper back.',
+  '保持躯干稳定，缓慢控制哑铃回落，回到起始位置前仍保持张力。':
+    'Keep the torso steady and lower with control, maintaining tension before the next rep.',
+  '肩膀下沉，肩胛骨稳定后收': 'Keep the shoulders down and shoulder blades stable',
+  手肘全程微屈且角度不变: 'Keep a fixed soft bend in the elbows',
+  '选择可控制的轻重量，用肩后束而非摆动躯干发力':
+    'Choose a controllable light load and use the rear delts instead of swinging the torso',
+  耸肩代偿: 'Shrugging to compensate',
+  下背部弯曲: 'Rounding the lower back',
+  重量过大导致动作变形: 'Using too much weight and losing form',
   肱二头肌: 'Biceps',
   股四头肌: 'Quadriceps',
   臀大肌: 'Gluteus Maximus',
@@ -216,6 +264,7 @@ const exerciseText: Record<string, string> = {
   '休息60–90秒': 'Rest 60–90 sec',
   '2–3组': '2–3 sets',
   '10–15次': '10–15 reps',
+  '12–15次': '12–15 reps',
   '8–12次/侧': '8–12 reps / side',
   '双脚与髋同宽站立，双手各持一只哑铃放在大腿前方。':
     'Stand hip-width apart with one dumbbell in each hand in front of your thighs.',

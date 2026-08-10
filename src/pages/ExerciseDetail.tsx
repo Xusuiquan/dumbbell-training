@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppHeader } from '../components/AppHeader/AppHeader'
 import { ExerciseIllustration } from '../components/ExerciseIllustration/ExerciseIllustration'
+import { MotionGuide } from '../components/MotionGuide/MotionGuide'
 import { exercises } from '../data/exerciseCatalog'
 import { useLanguage } from '../hooks/useLanguage'
 import './Pages.css'
@@ -71,16 +72,25 @@ export function ExerciseDetail({
             handleTouchEnd(touch.clientX, touch.clientY)
           }}
         >
-          <div className="pose-grid">
-            <div>
-              <ExerciseIllustration label={t('startPosition')} src={exercise.startImage} />
-              <p>{t('startPosition')}</p>
+          {exercise.visualGuide ? (
+            <MotionGuide
+              guide={exercise.visualGuide}
+              motionTitle={t('fullMovement')}
+              cueTitle={t('formCheckpoints')}
+              text={text}
+            />
+          ) : (
+            <div className="pose-grid">
+              <div>
+                <ExerciseIllustration label={t('startPosition')} src={exercise.startImage} />
+                <p>{t('startPosition')}</p>
+              </div>
+              <div>
+                <ExerciseIllustration label={t('endPosition')} src={exercise.endImage} />
+                <p>{t('endPosition')}</p>
+              </div>
             </div>
-            <div>
-              <ExerciseIllustration label={t('endPosition')} src={exercise.endImage} />
-              <p>{t('endPosition')}</p>
-            </div>
-          </div>
+          )}
           <DetailSection title={t('targetMuscles')}>
             <div className="muscles">
               {exercise.targetMuscles.map((item) => (

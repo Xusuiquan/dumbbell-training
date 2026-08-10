@@ -1,5 +1,9 @@
 import type { Exercise } from '../../types/exercise'
 
+const reverseFlyStageImages = [1, 2, 3, 4, 5].map(
+  (step) => new URL(`../../../俯身飞鸟/${step}.png`, import.meta.url).href,
+)
+
 export const dumbbellExercises: Exercise[] = [
   {
     id: 'bent-over-reverse-fly',
@@ -12,16 +16,73 @@ export const dumbbellExercises: Exercise[] = [
     startImage: '',
     endImage: '',
     steps: [
-      '双脚与髋同宽站立，屈髋俯身，背部保持自然中立。',
-      '双手持铃自然下垂，手肘保持微屈，肩膀远离耳朵。',
-      '向两侧打开手臂，带动肩胛骨轻轻向后收紧。',
-      '抬至与躯干平齐后停顿，再缓慢控制下放。',
+      '双脚与髋同宽站立，核心收紧，胸部打开，哑铃自然下垂。',
+      '髋部后折，身体前倾，膝盖微屈，保持背部自然中立。',
+      '手肘保持微屈，以肩关节为主导，双臂向身体两侧打开。',
+      '手臂展开至与肩同高或略低，顶峰收紧，感受肩后束与上背发力。',
+      '保持躯干稳定，缓慢控制哑铃回落，回到起始位置前仍保持张力。',
     ],
-    tips: ['选择轻重量，专注后肩发力', '手肘全程保持微屈', '躯干稳定，不要借力甩动'],
+    tips: [
+      '全程保持背部自然中立',
+      '肩膀下沉，肩胛骨稳定后收',
+      '手肘全程微屈且角度不变',
+      '选择可控制的轻重量，用肩后束而非摆动躯干发力',
+    ],
     mistakes: ['耸肩代偿', '下背部弯曲', '重量过大导致动作变形'],
     sets: '2–3组',
     reps: '12–15次',
     rest: '休息60–90秒',
+    visualGuide: {
+      stages: [
+        {
+          title: '起始站姿',
+          cue: '核心收紧，胸部打开，哑铃自然下垂',
+          image: reverseFlyStageImages[0],
+        },
+        {
+          title: '俯身准备',
+          cue: '髋部后折，膝盖微屈，背部保持平直',
+          image: reverseFlyStageImages[1],
+        },
+        {
+          title: '开始打开',
+          cue: '以肩关节为主导，手肘微屈向两侧展开',
+          image: reverseFlyStageImages[2],
+        },
+        {
+          title: '顶峰收缩',
+          cue: '手臂展至躯干两侧，感受肩后束主动发力',
+          image: reverseFlyStageImages[3],
+        },
+        {
+          title: '控制回落',
+          cue: '保持躯干稳定，缓慢下放并持续保持张力',
+          image: reverseFlyStageImages[4],
+        },
+      ],
+      formCues: [
+        {
+          kind: 'spine',
+          title: '保持中立脊柱',
+          description: '全程背部平直，核心收紧，避免弓背或塌腰',
+        },
+        {
+          kind: 'shoulder',
+          title: '肩胛稳定后收',
+          description: '肩膀下沉，肩胛骨稳定，顶峰更好孤立后肩',
+        },
+        {
+          kind: 'elbow',
+          title: '肘部微屈固定',
+          description: '肘部角度全程不变，减少小臂和关节代偿',
+        },
+        {
+          kind: 'target',
+          title: '肩后束 · 上背部',
+          description: '顶峰稍停，感受目标肌肉发力，控制节奏',
+        },
+      ],
+    },
   },
   {
     id: 'dumbbell-shoulder-press',

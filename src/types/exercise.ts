@@ -1,3 +1,22 @@
+export type FormCueKind = 'spine' | 'shoulder' | 'elbow' | 'target'
+
+export interface PostureStage {
+  title: string
+  cue: string
+  image: string
+}
+
+export interface FormCue {
+  kind: FormCueKind
+  title: string
+  description: string
+}
+
+export interface ExerciseVisualGuide {
+  stages: PostureStage[]
+  formCues: FormCue[]
+}
+
 export interface Exercise {
   id: string
   name: string
@@ -14,4 +33,5 @@ export interface Exercise {
   sets: string
   reps: string
   rest: string
+  visualGuide?: ExerciseVisualGuide
 }

@@ -121,7 +121,10 @@
   color: var(--text-secondary);
   font-size: 13px;
   font-weight: 700;
-  transition: color 0.16s ease, background-color 0.16s ease, box-shadow 0.16s ease;
+  transition:
+    color 0.16s ease,
+    background-color 0.16s ease,
+    box-shadow 0.16s ease;
 }
 .detail-tab.active {
   background: var(--surface);
@@ -136,6 +139,10 @@
   scrollbar-width: none;
   touch-action: pan-y;
   animation: detail-panel-in 160ms ease-out;
+}
+.detail-panel > section:first-child > .section-title:first-child,
+.detail-panel > .motion-guide:first-child .section-title:first-child {
+  margin-top: 0;
 }
 .detail-panel::-webkit-scrollbar {
   display: none;
