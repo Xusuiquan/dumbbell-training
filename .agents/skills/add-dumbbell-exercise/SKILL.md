@@ -30,6 +30,8 @@ Use the benchmark PNGs in `assets/` as visual references. Do not copy text baked
 ### 2. Write the movement model first
 
 - Identify the primary muscle, one or two supporting muscles, setup, concentric phase, peak position, and eccentric return.
+- Default to a self-supported standing movement using only the dumbbell or dumbbells named by the exercise. Do not add a bench, chair, box, wall, yoga mat, resistance band, or other support unless the user explicitly requests it or the named movement genuinely requires it.
+- Prefer stable split stances, hip hinges, and bracing the free hand on the athlete's own thigh when they preserve the named movement. Do not silently change to a different exercise merely to remove equipment; ask before adding essential equipment.
 - Normalize the action to exactly four visible phases:
   1. setup or stance
   2. load or preparation
@@ -93,6 +95,7 @@ Report the exercise ID, asset directory, changed data file, build result, valida
 ## Guardrails
 
 - Do not silently replace an existing exercise's art direction.
+- Do not introduce auxiliary equipment as a convenience. Keep the data `equipment` list, written setup, and generated artwork consistent with the equipment the user approved.
 - Do not add a sixth frame to solve weak copy; rewrite or merge phases first.
 - Do not bake labels into production bitmaps.
 - Do not invent new icon families; use `DetailIcon.tsx` and its semantic kinds.

@@ -10,6 +10,15 @@
 - Blue motion arrows are allowed in step art, but keep them clear of the athlete and UI text zones.
 - No photorealistic gym background; the interface needs clean crops.
 
+## Default equipment policy
+
+- Show only the dumbbell or dumbbells required by the exercise.
+- Default to standing, split-stance, or hip-hinge variants that support themselves without furniture.
+- Do not add a workout bench, chair, box, wall, yoga mat, resistance band, rack, or machine for visual convenience.
+- A free hand may brace on the athlete's own thigh when this keeps the named movement recognizable and stable.
+- Add auxiliary equipment only when the user explicitly requests it or it is essential to the exact named exercise. If removing it changes the exercise identity, ask before generating.
+- Repeat the allowed equipment and forbidden props in the image-generation prompt, then reject any storyboard containing unapproved equipment.
+
 ## Forbidden bitmap content
 
 Do not generate:
@@ -86,6 +95,7 @@ Add only the pose, motion direction, and muscle highlight that change for each f
 
 ## Visual QA checklist
 
+- Confirm that every visible prop appears in the approved `equipment` list; reject unrequested benches, chairs, mats, boxes, walls, bands, racks, or machines.
 - Count fingers, hands, arms, legs, dumbbells, and plates.
 - Compare grip and wrist orientation across frames.
 - Check that the written left/right or up/down direction matches the art.

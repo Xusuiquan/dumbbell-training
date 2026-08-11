@@ -4,6 +4,10 @@ const reverseFlyAssetRoot = '/images/exercises/bent-over-reverse-fly'
 const reverseFlyStageImages = ['01', '02', '03', '04'].map(
   (step) => `${reverseFlyAssetRoot}/steps/${step}.webp`,
 )
+const oneArmRowAssetRoot = '/images/exercises/one-arm-dumbbell-row'
+const oneArmRowStageImages = ['01', '02', '03', '04'].map(
+  (step) => `${oneArmRowAssetRoot}/steps/${step}.webp`,
+)
 
 export const dumbbellExercises: Exercise[] = [
   {
@@ -169,6 +173,173 @@ export const dumbbellExercises: Exercise[] = [
       prescription: [
         { icon: 'sets', tone: 'blue', label: '组数', value: '2–3组' },
         { icon: 'reps', tone: 'green', label: '次数', value: '12–15次' },
+        { icon: 'rest', tone: 'orange', label: '休息', value: '60–90秒' },
+      ],
+    },
+  },
+  {
+    id: 'one-arm-dumbbell-row',
+    name: '单臂哑铃划船',
+    bodyPart: '背部',
+    targetMuscles: ['背阔肌', '菱形肌', '肱二头肌'],
+    difficulty: 'beginner',
+    equipment: ['哑铃'],
+    thumbnail: `${oneArmRowAssetRoot}/thumbnail.webp`,
+    startImage: oneArmRowStageImages[0],
+    endImage: oneArmRowStageImages[2],
+    steps: [
+      '双脚前后站稳，左手撑住左腿，右手握住哑铃。',
+      '髋部后折进入俯身，背部保持自然中立，右臂垂在肩膀下方。',
+      '肩胛先稳定后收，右手肘贴近身体并拉向髋部。',
+      '保持躯干和髋部稳定，缓慢下放哑铃至手臂自然伸展。',
+    ],
+    tips: [
+      '支撑手稳定压住大腿',
+      '背部保持自然中立，髋部不要转动',
+      '手肘贴近身体并拉向髋部',
+      '选择可控重量，避免借力扭转躯干',
+    ],
+    mistakes: ['耸肩代偿', '躯干旋转', '重量过大导致手臂猛拉'],
+    sets: '3组',
+    reps: '每侧10–12次',
+    rest: '休息60–90秒',
+    visualGuide: {
+      stages: [
+        {
+          title: '支撑站姿',
+          cue: '前后站稳，左手支撑左腿',
+          image: oneArmRowStageImages[0],
+        },
+        {
+          title: '俯身准备',
+          cue: '髋部后折，右臂自然下垂',
+          image: oneArmRowStageImages[1],
+        },
+        {
+          title: '拉向髋部',
+          cue: '肩胛后收，手肘贴近身体',
+          image: oneArmRowStageImages[2],
+        },
+        {
+          title: '控制下放',
+          cue: '躯干不转，沿原轨迹还原',
+          image: oneArmRowStageImages[3],
+        },
+      ],
+      formCues: [
+        {
+          kind: 'spine',
+          title: '保持背部中立',
+          description: '髋部折叠，核心收紧，避免弓背或塌腰',
+        },
+        {
+          kind: 'shoulder',
+          title: '肩胛稳定后收',
+          description: '肩膀下沉，先稳定肩胛再拉起哑铃',
+        },
+        {
+          kind: 'elbow',
+          title: '手肘拉向髋部',
+          description: '手肘贴近身体，不要向外张开',
+        },
+        {
+          kind: 'target',
+          title: '背阔肌 · 中背部',
+          description: '顶峰稍停，躯干保持稳定，感受背部收缩',
+        },
+      ],
+    },
+    detail: {
+      analysis: {
+        image: `${oneArmRowAssetRoot}/analysis.webp`,
+        imageAlt: '单臂哑铃划船顶峰收缩与背阔肌发力示意',
+        primaryMuscle: '背阔肌',
+        supportingMuscles: ['菱形肌', '肱二头肌'],
+        summary: '肩胛先稳定后收，手肘贴身拉向髋部。',
+        callouts: ['支撑手稳定，肩膀下沉', '背部中立，髋部保持正对', '手肘贴身拉向髋部'],
+      },
+      steps: [
+        {
+          title: '支撑',
+          cue: '站距稳定',
+          description: '左手压稳左侧大腿',
+          image: oneArmRowStageImages[0],
+          imageAlt: '前后站立并以左手支撑左腿',
+        },
+        {
+          title: '俯身',
+          cue: '背部中立',
+          description: '哑铃垂在肩膀下方',
+          image: oneArmRowStageImages[1],
+          imageAlt: '背部保持中立让右臂自然下垂',
+        },
+        {
+          title: '拉起',
+          cue: '手肘贴身',
+          description: '沿身体拉向髋部',
+          image: oneArmRowStageImages[2],
+          imageAlt: '右手肘贴近身体拉起哑铃',
+        },
+        {
+          title: '下放',
+          cue: '缓慢还原',
+          description: '躯干不转，肩膀不耸',
+          image: oneArmRowStageImages[3],
+          imageAlt: '控制哑铃沿原轨迹缓慢下放',
+        },
+      ],
+      keyPoints: [
+        {
+          icon: 'spine',
+          tone: 'blue',
+          title: '背部中立',
+          description: '髋部折叠，脊柱保持自然直线',
+        },
+        {
+          icon: 'shoulder',
+          tone: 'green',
+          title: '肩胛稳定',
+          description: '肩膀下沉，先稳定再向后收',
+        },
+        {
+          icon: 'elbow',
+          tone: 'orange',
+          title: '肘向髋部',
+          description: '手肘贴身，不要向外张开',
+        },
+        {
+          icon: 'tempo',
+          tone: 'blue',
+          title: '控制节奏',
+          description: '拉起1秒 · 停1秒 · 下放2秒',
+        },
+      ],
+      mistakes: [
+        {
+          icon: 'shrug',
+          tone: 'red',
+          title: '耸肩代偿',
+          description: '斜方肌抢先发力',
+          correction: '肩膀主动远离耳朵',
+        },
+        {
+          icon: 'lower-back',
+          tone: 'red',
+          title: '躯干旋转',
+          description: '髋部跟随打开',
+          correction: '核心收紧保持正对',
+        },
+        {
+          icon: 'overload',
+          tone: 'red',
+          title: '重量过大',
+          description: '手臂借力猛拉',
+          correction: '减轻重量慢速完成',
+        },
+      ],
+      prescription: [
+        { icon: 'sets', tone: 'blue', label: '组数', value: '3组' },
+        { icon: 'reps', tone: 'green', label: '次数', value: '每侧10–12次' },
         { icon: 'rest', tone: 'orange', label: '休息', value: '60–90秒' },
       ],
     },
