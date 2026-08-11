@@ -13,15 +13,15 @@ import { AppHeader } from '../components/AppHeader/AppHeader'
 import type { Theme } from '../hooks/useTheme'
 import { useLanguage } from '../hooks/useLanguage'
 import './Pages.css'
-const rows = [
-  ['displaySettings', Paintbrush],
-  ['fontSize', Type],
-  ['clearCache', Trash2],
-  ['backup', Download],
-  ['about', CircleHelp],
-  ['terms', WalletCards],
-  ['privacy', WalletCards],
-] as const
+// const rows = [
+//   ['displaySettings', Paintbrush],
+//   ['fontSize', Type],
+//   ['clearCache', Trash2],
+//   ['backup', Download],
+//   ['about', CircleHelp],
+//   ['terms', WalletCards],
+//   ['privacy', WalletCards],
+// ] as const
 export function Settings({ theme, setTheme }: { theme: Theme; setTheme: (theme: Theme) => void }) {
   const { language, setLanguage, t } = useLanguage()
   return (
@@ -45,11 +45,11 @@ export function Settings({ theme, setTheme }: { theme: Theme; setTheme: (theme: 
             {language === 'zh' ? '中文' : 'English'}
           </button>
         </SettingRow>
-        {rows.map(([key, Icon]) => (
+        {/* {rows.map(([key, Icon]) => (
           <SettingRow label={t(key)} Icon={Icon} key={key}>
             <ChevronRight size={18} />
           </SettingRow>
-        ))}
+        ))} */}
       </div>
     </main>
   )

@@ -48,10 +48,19 @@ Use the benchmark PNGs in `assets/` as visual references. Do not copy text baked
 ### 4. Generate the image set
 
 - Use the available image generation or editing skill for bitmap artwork.
-- Generate the hero analysis image and all four step images in the same run when possible so the athlete, clothing, dumbbells, camera, and lighting remain consistent.
+- Read the fast storyboard workflow in `references/image-spec.md` and use it by default.
+- Generate one square 2 × 2 storyboard containing all four ordered phases. Do not generate the thumbnail or analysis image separately in the first pass.
+- Save the storyboard outside `public/`, then run:
+
+  ```bash
+  node .agents/skills/add-dumbbell-exercise/scripts/prepare-exercise-images.mjs <exercise-id> <storyboard-path>
+  ```
+
+- The script crops the four panels and derives `analysis.webp` and `thumbnail.webp` from the peak frame. Use `--hero-source <path>` only when the user requests a separately generated hero.
+- If one panel fails QA, regenerate only that pose and replace it with `--replace-step <1-4>`. Do not regenerate the complete storyboard unless athlete consistency is broken across several panels.
 - Follow `references/image-spec.md`. Images must contain no Chinese or English text, step numbers, logos, or watermarks. The UI owns labels and numbers.
 - Save new assets under `public/images/exercises/<exercise-id>/` using the required filenames. Keep source masters outside the production bundle if they are materially larger.
-- Inspect each generated image at full size before integration. Reject extra limbs, malformed dumbbells, inconsistent grip, reversed direction, or a pose that contradicts the written phase.
+- Inspect the storyboard once, then crop-test the derived assets in the actual UI. Open an individual source at full size only when a panel is questionable. Reject extra limbs, malformed dumbbells, inconsistent grip, reversed direction, or a pose that contradicts the written phase.
 
 ### 5. Integrate through the typed data model
 

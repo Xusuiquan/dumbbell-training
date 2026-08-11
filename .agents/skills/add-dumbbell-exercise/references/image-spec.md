@@ -36,6 +36,44 @@ The React UI renders all labels, numbers, callouts, and cards.
 
 Generate at least 1024 px on the long edge. Export production images as WebP when practical. Keep each production file reasonably small without introducing visible artifacts.
 
+## Fast storyboard workflow
+
+Use this workflow unless the user explicitly prefers separate high-quality generations.
+
+1. Generate one square 2 × 2 storyboard at the highest practical resolution.
+2. Place the phases in reading order: setup top-left, preparation top-right, peak bottom-left, controlled return bottom-right.
+3. Keep one athlete per panel, generous white space around every body and dumbbell, and no panel borders, captions, badges, or text.
+4. Save the source outside `public/` and pass it to `scripts/prepare-exercise-images.mjs`.
+5. Inspect the storyboard once and the final UI crop once. Inspect full-size panels only when defects are suspected.
+6. Regenerate only a failed panel and replace it with `--replace-step`; regenerate the whole storyboard only when the character is inconsistent across multiple panels.
+
+Prompt addition for the storyboard:
+
+```text
+Create one clean square 2x2 exercise storyboard with four equal borderless panels in reading order. Top-left: setup. Top-right: preparation. Bottom-left: peak contraction. Bottom-right: controlled return. Exactly one full-body athlete and two dumbbells in each panel. Keep the complete body, hands, feet, and dumbbells inside each panel with generous white margins. No captions, numbers, separators, borders, logos, or watermarks.
+```
+
+Process the generated source:
+
+```bash
+node .agents/skills/add-dumbbell-exercise/scripts/prepare-exercise-images.mjs <exercise-id> <storyboard-path>
+```
+
+Useful overrides:
+
+```bash
+# Horizontally arranged four-panel source
+node .agents/skills/add-dumbbell-exercise/scripts/prepare-exercise-images.mjs <exercise-id> <storyboard-path> --layout horizontal
+
+# Replace only a failed second phase with a separately generated image
+node .agents/skills/add-dumbbell-exercise/scripts/prepare-exercise-images.mjs <exercise-id> <single-image-path> --replace-step 2
+
+# Use a separately generated force-analysis hero while keeping storyboard steps
+node .agents/skills/add-dumbbell-exercise/scripts/prepare-exercise-images.mjs <exercise-id> <storyboard-path> --hero-source <hero-path>
+```
+
+The script normalizes every step to 1024 × 1280, writes WebP assets, derives the thumbnail from the peak frame, and creates the landscape analysis canvas with room for UI callouts.
+
 ## Consistency prompt block
 
 Reuse this block in every generation prompt:
@@ -52,5 +90,7 @@ Add only the pose, motion direction, and muscle highlight that change for each f
 - Compare grip and wrist orientation across frames.
 - Check that the written left/right or up/down direction matches the art.
 - Confirm the target muscle highlight is anatomically plausible.
-- Crop-test at the actual four-column card size before accepting the asset.
+- Check the source storyboard once for cross-panel athlete consistency.
+- Crop-test all derived assets together at the actual four-column card size before accepting them.
+- Open an individual full-resolution panel only when the contact sheet or UI crop reveals a possible defect.
 - Inspect the hero at 430 px width and ensure the callout column remains readable.
