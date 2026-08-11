@@ -290,6 +290,80 @@ const exerciseText: Record<string, string> = {
   重量过大导致手臂猛拉: 'Using too much weight and jerking with the arm',
   '3组': '3 sets',
   '每侧10–12次': '10–12 reps per side',
+  哑铃罗马尼亚硬拉: 'Dumbbell Romanian Deadlift',
+  腘绳肌: 'Hamstrings',
+  臀大肌: 'Gluteus maximus',
+  竖脊肌: 'Erector spinae',
+  站稳持铃: 'Set stance',
+  髋部后移: 'Hips back',
+  下放拉伸: 'Lower and stretch',
+  站直还原: 'Stand and return',
+  '双脚与髋同宽，哑铃贴近大腿': 'Stand hip-width apart with the dumbbells close to the thighs.',
+  '膝盖微屈，背部保持自然中立': 'Keep soft knees and a naturally neutral back.',
+  '哑铃贴腿，感受大腿后侧拉伸': 'Keep the dumbbells close and feel the hamstrings stretch.',
+  '臀腿发力，髋部向前回到站姿':
+    'Use the glutes and hamstrings to bring the hips forward and stand.',
+  '躯干随髋部前倾，避免弓背或塌腰':
+    'Let the torso follow the hip hinge without rounding or overextending.',
+  髋部主动后移: 'Drive the hips back',
+  '想象臀部向后触碰墙面，不要主动下蹲':
+    'Imagine reaching the hips toward a wall instead of squatting down.',
+  哑铃贴近双腿: 'Keep dumbbells close to the legs',
+  '手臂自然垂直，哑铃沿腿部上下移动':
+    'Let the arms hang vertically and move the dumbbells along the legs.',
+  '腘绳肌 · 臀部': 'Hamstrings · Glutes',
+  '下放感受拉伸，站起感受臀腿收缩':
+    'Feel the stretch while lowering and the glutes and hamstrings contract as you stand.',
+  哑铃罗马尼亚硬拉底部姿势与臀腿后侧发力示意:
+    'Dumbbell Romanian deadlift bottom position and posterior-chain focus',
+  '髋部向后移动，哑铃贴腿下放，再由臀腿带动站起。':
+    'Push the hips back, lower the dumbbells close to the legs, then stand using the glutes and hamstrings.',
+  '背部自然中立，颈部放松': 'Keep a naturally neutral back and relaxed neck',
+  '髋部向后，膝盖保持微屈': 'Push the hips back and keep the knees softly bent',
+  '哑铃贴腿，下放至小腿中段': 'Keep the dumbbells close and lower to mid-shin',
+  双脚髋宽: 'Feet hip-width',
+  哑铃贴近大腿前侧: 'Keep the dumbbells close to the front of the thighs',
+  双脚与髋同宽持哑铃自然站立: 'Stand naturally with dumbbells and feet hip-width apart',
+  后移: 'Hinge back',
+  髋部主导: 'Lead with hips',
+  '膝盖微屈，臀部向后': 'Soften the knees and push the hips back',
+  保持背部中立并将髋部向后移动: 'Keep a neutral back while moving the hips backward',
+  哑铃贴腿: 'Dumbbells close',
+  下放至小腿中段: 'Lower to mid-shin',
+  哑铃贴近双腿下放至小腿中段: 'Lower the dumbbells close to the legs to mid-shin',
+  站起: 'Stand',
+  臀腿发力: 'Drive with glutes and hamstrings',
+  '髋部向前，站直不后仰': 'Bring the hips forward and stand tall without leaning back',
+  臀腿发力带动身体回到站姿: 'Use the glutes and hamstrings to return to standing',
+  '核心收紧，脊柱保持自然直线': 'Brace the core and keep a naturally straight spine',
+  '臀部向后，不要主动向下蹲': 'Push the hips back instead of actively squatting down',
+  '手臂垂直，重量靠近身体': 'Keep the arms vertical and the weight close to the body',
+  '下放2秒 · 停1秒 · 站起1秒': 'Lower 2 sec · pause 1 sec · stand 1 sec',
+  弓背下放: 'Rounding while lowering',
+  脊柱失去自然中立: 'The spine loses its natural neutral position',
+  减小幅度并收紧核心: 'Reduce the range and brace the core',
+  下蹲过多: 'Squatting too much',
+  膝盖过度向前移动: 'The knees travel too far forward',
+  髋部主动向后移动: 'Actively move the hips backward',
+  哑铃离腿: 'Dumbbells drift away',
+  重量远离身体重心: 'The weight moves away from the body',
+  沿双腿贴近上下移动: 'Move the dumbbells close along the legs',
+  '双脚与髋同宽站立，双手持哑铃贴近大腿前侧。':
+    'Stand hip-width apart with both dumbbells close to the front of the thighs.',
+  '膝盖保持微屈，髋部向后移动，背部保持自然中立。':
+    'Keep the knees softly bent, move the hips back, and maintain a naturally neutral back.',
+  '哑铃贴腿下放至小腿中段，感受大腿后侧拉伸。':
+    'Lower the dumbbells close to the legs to mid-shin and feel the hamstrings stretch.',
+  '脚掌踩稳，臀腿发力带动髋部向前，站直后不要后仰。':
+    'Keep the feet planted and use the glutes and hamstrings to stand without leaning back.',
+  '动作由髋部后移主导，不要主动下蹲': 'Lead with the hips moving back instead of squatting down',
+  哑铃始终贴近双腿移动: 'Keep the dumbbells close to the legs throughout',
+  下放至背部仍能保持自然中立的位置:
+    'Lower only as far as you can maintain a naturally neutral back',
+  '使用可控重量，站起时不要过度后仰': 'Use a controllable load and avoid leaning back at the top',
+  屈膝过多变成深蹲: 'Bending the knees too much and turning it into a squat',
+  哑铃远离双腿: 'Letting the dumbbells drift away from the legs',
+  '10–12次': '10–12 reps',
 }
 
 type TranslationKey = keyof typeof translations.zh
