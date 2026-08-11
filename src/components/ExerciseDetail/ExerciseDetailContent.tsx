@@ -62,10 +62,12 @@ export function ExerciseDetailContent({
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <strong>{text(step.title)}</strong>
               </div>
-              <p className="exercise-step-cue">{text(step.cue)}</p>
-              <p className="exercise-step-description">{text(step.description)}</p>
               <div className="exercise-step-image">
                 <img src={step.image} alt={text(step.imageAlt)} />
+              </div>
+              <div className="exercise-step-copy">
+                <p className="exercise-step-cue">{text(step.cue)}</p>
+                <p className="exercise-step-description">{text(step.description)}</p>
               </div>
             </li>
           ))}

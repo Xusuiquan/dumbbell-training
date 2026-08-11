@@ -41,11 +41,6 @@ if (existsSync(assetRoot)) {
     ? readdirSync(stepRoot).filter((file) => /^\d\d\.webp$/.test(file))
     : []
   if (webpSteps.length !== 4) fail(`Expected exactly 4 WebP step files, found ${webpSteps.length}`)
-} else if (exerciseId === 'bent-over-reverse-fly') {
-  ;['1.png', '2.png', '4.png', '5.png'].forEach((file) =>
-    requireFile(join(repoRoot, '俯身飞鸟', file)),
-  )
-  console.log('Asset check: accepted the reverse-fly legacy PNG set')
 } else {
   fail(`Missing standardized asset directory: ${assetRoot}`)
 }

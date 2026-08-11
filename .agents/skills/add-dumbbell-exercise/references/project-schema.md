@@ -43,8 +43,6 @@ public/images/exercises/<exercise-id>/
 
 Reference them as `/images/exercises/<exercise-id>/analysis.webp` and `/images/exercises/<exercise-id>/steps/01.webp` inside the data record.
 
-The existing reverse-fly record temporarily imports its historical PNG set from the repository root. Do not use that legacy layout for new exercises.
-
 ## Compatibility
 
 Keep these legacy fields meaningful because list cards and fallback screens may still read them:

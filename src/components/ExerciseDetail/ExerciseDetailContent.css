@@ -132,7 +132,7 @@
 }
 
 .exercise-detail-section > h2 {
-  margin: 0 0 7px;
+  margin: 0 0 10px;
   font-size: 17px;
   line-height: 1.1;
   font-weight: 900;
@@ -150,10 +150,13 @@
 
 .exercise-step-card {
   position: relative;
+  display: grid;
+  grid-template-rows: 25px minmax(0, 1fr) auto;
+  gap: 3px;
   min-width: 0;
   height: 198px;
   overflow: hidden;
-  padding: 9px 7px 0;
+  padding: 9px 7px 7px;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--surface);
@@ -189,20 +192,25 @@
 
 .exercise-step-cue,
 .exercise-step-description {
-  margin: 6px 0 0;
+  margin: 0;
   color: var(--text-primary);
   font-size: 10.5px;
   line-height: 1.25;
 }
 
 .exercise-step-description {
-  margin-top: 3px;
+  margin-top: 2px;
   color: var(--text-secondary);
 }
 
+.exercise-step-copy {
+  position: relative;
+  z-index: 1;
+}
+
 .exercise-step-image {
-  position: absolute;
-  inset: 77px -8px -9px;
+  min-height: 0;
+  margin-inline: -7px;
   overflow: hidden;
 }
 
@@ -210,8 +218,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 53%;
-  transform: scale(1.24);
+  object-position: center 51%;
+  transform: scale(1.14);
   mix-blend-mode: multiply;
 }
 
@@ -316,7 +324,7 @@
 
 .exercise-prescription-card strong {
   display: block;
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1;
   font-weight: 900;
   white-space: nowrap;

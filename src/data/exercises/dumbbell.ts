@@ -1,7 +1,8 @@
 import type { Exercise } from '../../types/exercise'
 
-const reverseFlyStageImages = [1, 2, 4, 5].map(
-  (step) => new URL(`../../../俯身飞鸟/${step}.png`, import.meta.url).href,
+const reverseFlyAssetRoot = '/images/exercises/bent-over-reverse-fly'
+const reverseFlyStageImages = ['01', '02', '03', '04'].map(
+  (step) => `${reverseFlyAssetRoot}/steps/${step}.webp`,
 )
 
 export const dumbbellExercises: Exercise[] = [
@@ -12,9 +13,9 @@ export const dumbbellExercises: Exercise[] = [
     targetMuscles: ['三角肌后束', '菱形肌'],
     difficulty: 'beginner',
     equipment: ['哑铃'],
-    thumbnail: '',
-    startImage: '',
-    endImage: '',
+    thumbnail: `${reverseFlyAssetRoot}/thumbnail.webp`,
+    startImage: reverseFlyStageImages[0],
+    endImage: reverseFlyStageImages[2],
     steps: [
       '双脚与髋同宽站立，核心收紧，胸部打开，哑铃自然下垂。',
       '髋部后折，身体前倾，膝盖微屈，保持背部自然中立。',
@@ -79,7 +80,7 @@ export const dumbbellExercises: Exercise[] = [
     },
     detail: {
       analysis: {
-        image: reverseFlyStageImages[2],
+        image: `${reverseFlyAssetRoot}/analysis.webp`,
         imageAlt: '俯身飞鸟顶峰收缩与肩后束发力示意',
         primaryMuscle: '肩后束',
         supportingMuscles: ['菱形肌', '斜方肌中束'],
