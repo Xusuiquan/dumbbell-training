@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { BottomNavigation } from './components/BottomNavigation/BottomNavigation'
 import { Toast } from './components/Toast/Toast'
@@ -20,6 +20,7 @@ export default function App() {
 }
 
 function AppContent() {
+  const location = useLocation()
   const { favorites, toggleFavorite } = useFavorites()
   const { theme, setTheme } = useTheme()
   const { t } = useLanguage()
@@ -29,6 +30,7 @@ function AppContent() {
     setNotice({ id: Date.now(), message: t(saved ? 'favoriteAdded' : 'favoriteRemoved') })
   }
   const cardProps = { favorites, onToggle: handleToggleFavorite }
+  const isExerciseDetail = /^\/exercises\/[^/]+$/.test(location.pathname)
   return (
     <div className="app-shell">
       <Routes>
@@ -40,8 +42,10 @@ function AppContent() {
         <Route path="/settings" element={<Settings theme={theme} setTheme={setTheme} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      <BottomNavigation />
-      {notice && <Toast key={notice.id} message={notice.message} onDismiss={() => setNotice(null)} />}
+      {!isExerciseDetail && <BottomNavigation />}
+      {notice && (
+        <Toast key={notice.id} message={notice.message} onDismiss={() => setNotice(null)} />
+      )}
     </div>
   )
 }

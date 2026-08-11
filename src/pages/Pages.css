@@ -79,19 +79,26 @@
   margin: 32px 0 0;
 }
 .detail-head {
+  position: relative;
   display: flex;
   align-items: center;
   flex: none;
 }
-.detail {
+.page.detail {
   height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  padding: max(7px, env(safe-area-inset-top)) 14px max(9px, env(safe-area-inset-bottom));
 }
 .detail-head .app-header {
   flex: 1;
   margin: 0;
+}
+.detail-head .app-header .header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .detail-head .app-header h1 {
   font-size: 20px;
@@ -139,6 +146,10 @@
   scrollbar-width: none;
   touch-action: pan-y;
   animation: detail-panel-in 160ms ease-out;
+}
+.structured-detail-panel {
+  margin-top: 8px;
+  padding-bottom: 0;
 }
 .detail-panel > section:first-child > .section-title:first-child,
 .detail-panel > .motion-guide:first-child .section-title:first-child {

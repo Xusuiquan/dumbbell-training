@@ -1,0 +1,8 @@
+interface:
+  display_name: '新增哑铃动作'
+  short_description: '按统一规范生成四步动作图、训练文案、结构化数据并接入项目'
+  default_prompt: '使用 $add-dumbbell-exercise 为当前哑铃训练项目新增一个完整动作。'
+  brand_color: '#111111'
+
+policy:
+  allow_implicit_invocation: true
