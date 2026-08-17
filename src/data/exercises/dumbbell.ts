@@ -12,6 +12,14 @@ const romanianDeadliftAssetRoot = '/images/exercises/dumbbell-romanian-deadlift'
 const romanianDeadliftStageImages = ['01', '02', '03', '04'].map(
   (step) => `${romanianDeadliftAssetRoot}/steps/${step}.webp`,
 )
+const gobletSquatAssetRoot = '/images/exercises/goblet-squat'
+const gobletSquatStageImages = ['01', '02', '03', '04'].map(
+  (step) => `${gobletSquatAssetRoot}/steps/${step}.webp`,
+)
+const shoulderPressAssetRoot = '/images/exercises/standing-dumbbell-shoulder-press'
+const shoulderPressStageImages = ['01', '02', '03', '04'].map(
+  (step) => `${shoulderPressAssetRoot}/steps/${step}.webp`,
+)
 
 export const dumbbellExercises: Exercise[] = [
   {
@@ -511,6 +519,340 @@ export const dumbbellExercises: Exercise[] = [
       prescription: [
         { icon: 'sets', tone: 'blue', label: '组数', value: '3组' },
         { icon: 'reps', tone: 'green', label: '次数', value: '10–12次' },
+        { icon: 'rest', tone: 'orange', label: '休息', value: '60–90秒' },
+      ],
+    },
+  },
+  {
+    id: 'goblet-squat',
+    name: '高脚杯深蹲',
+    bodyPart: '腿部',
+    targetMuscles: ['股四头肌', '臀大肌', '内收肌'],
+    difficulty: 'beginner',
+    equipment: ['哑铃'],
+    thumbnail: `${gobletSquatAssetRoot}/thumbnail.webp`,
+    startImage: gobletSquatStageImages[0],
+    endImage: gobletSquatStageImages[2],
+    steps: [
+      '双脚略宽于髋站立，脚尖微向外，双手将哑铃贴近胸前。',
+      '保持脚掌踩稳，屈髋屈膝下蹲，膝盖跟随脚尖方向。',
+      '下蹲至可控深度，背部保持自然中立，膝盖不要向内扣。',
+      '脚掌均匀蹬地，臀腿发力站起，回到稳定站姿。',
+    ],
+    tips: [
+      '哑铃始终贴近胸前，肘部自然向下',
+      '膝盖与脚尖方向一致，不要向内扣',
+      '全程保持脚跟和前脚掌稳定着地',
+      '使用可控重量，下蹲深度以姿势稳定为准',
+    ],
+    mistakes: ['膝盖向内扣', '脚跟离地', '身体过度前倾'],
+    sets: '3组',
+    reps: '10–15次',
+    rest: '休息60–90秒',
+    visualGuide: {
+      stages: [
+        {
+          title: '持铃站稳',
+          cue: '双脚略宽，哑铃贴近胸前',
+          image: gobletSquatStageImages[0],
+        },
+        {
+          title: '控制下蹲',
+          cue: '屈髋屈膝，膝盖跟随脚尖',
+          image: gobletSquatStageImages[1],
+        },
+        {
+          title: '底部稳定',
+          cue: '脚掌踩稳，背部保持自然中立',
+          image: gobletSquatStageImages[2],
+        },
+        {
+          title: '蹬地站起',
+          cue: '臀腿发力，膝盖保持对齐',
+          image: gobletSquatStageImages[3],
+        },
+      ],
+      formCues: [
+        {
+          kind: 'spine',
+          title: '保持背部中立',
+          description: '胸部自然打开，避免弓背或过度前倾',
+        },
+        {
+          kind: 'shoulder',
+          title: '哑铃贴近胸前',
+          description: '双手稳定持铃，肘部自然朝向下方',
+        },
+        {
+          kind: 'elbow',
+          title: '膝盖跟随脚尖',
+          description: '膝盖稳定向外，不要出现内扣',
+        },
+        {
+          kind: 'target',
+          title: '股四头肌 · 臀部',
+          description: '下蹲保持控制，站起时臀腿共同发力',
+        },
+      ],
+    },
+    detail: {
+      analysis: {
+        image: `${gobletSquatAssetRoot}/analysis.webp`,
+        imageAlt: '高脚杯深蹲底部姿势与股四头肌臀部发力示意',
+        primaryMuscle: '股四头肌',
+        supportingMuscles: ['臀大肌', '内收肌'],
+        summary: '哑铃贴近胸前，膝盖跟随脚尖，下蹲后由臀腿带动站起。',
+        callouts: ['哑铃贴近胸前，肘部向下', '背部自然中立，胸部打开', '膝盖跟随脚尖，脚掌踩稳'],
+      },
+      steps: [
+        {
+          title: '站稳',
+          cue: '持铃贴胸',
+          description: '双脚略宽，脚尖微外',
+          image: gobletSquatStageImages[0],
+          imageAlt: '双手将一只哑铃竖直贴近胸前站立',
+        },
+        {
+          title: '下蹲',
+          cue: '膝髋同屈',
+          description: '膝盖跟随脚尖方向',
+          image: gobletSquatStageImages[1],
+          imageAlt: '保持哑铃贴胸并控制身体向下蹲',
+        },
+        {
+          title: '底部',
+          cue: '脚掌踩稳',
+          description: '背部中立，膝盖不内扣',
+          image: gobletSquatStageImages[2],
+          imageAlt: '高脚杯深蹲底部保持脚掌着地',
+        },
+        {
+          title: '站起',
+          cue: '蹬地发力',
+          description: '臀腿发力回到站姿',
+          image: gobletSquatStageImages[3],
+          imageAlt: '脚掌蹬地带动身体站起',
+        },
+      ],
+      keyPoints: [
+        {
+          icon: 'spine',
+          tone: 'blue',
+          title: '背部中立',
+          description: '核心收紧，胸部保持自然打开',
+        },
+        {
+          icon: 'shoulder',
+          tone: 'green',
+          title: '持铃贴胸',
+          description: '重量靠近身体，肘部自然向下',
+        },
+        {
+          icon: 'elbow',
+          tone: 'orange',
+          title: '膝盖对齐',
+          description: '膝盖跟随脚尖，不要向内扣',
+        },
+        {
+          icon: 'tempo',
+          tone: 'blue',
+          title: '控制节奏',
+          description: '下蹲2秒 · 停1秒 · 站起1秒',
+        },
+      ],
+      mistakes: [
+        {
+          icon: 'overload',
+          tone: 'red',
+          title: '膝盖内扣',
+          description: '膝盖偏离脚尖方向',
+          correction: '主动向脚尖方向打开',
+        },
+        {
+          icon: 'shoulder',
+          tone: 'red',
+          title: '脚跟抬起',
+          description: '身体重心过度前移',
+          correction: '全脚掌均匀踩稳',
+        },
+        {
+          icon: 'lower-back',
+          tone: 'red',
+          title: '过度前倾',
+          description: '哑铃远离身体重心',
+          correction: '持铃贴胸并减小深度',
+        },
+      ],
+      prescription: [
+        { icon: 'sets', tone: 'blue', label: '组数', value: '3组' },
+        { icon: 'reps', tone: 'green', label: '次数', value: '10–15次' },
+        { icon: 'rest', tone: 'orange', label: '休息', value: '60–90秒' },
+      ],
+    },
+  },
+  {
+    id: 'standing-dumbbell-shoulder-press',
+    name: '站姿哑铃推举',
+    bodyPart: '肩部',
+    targetMuscles: ['三角肌前束', '三角肌中束', '肱三头肌'],
+    difficulty: 'beginner',
+    equipment: ['哑铃'],
+    thumbnail: `${shoulderPressAssetRoot}/thumbnail.webp`,
+    startImage: shoulderPressStageImages[0],
+    endImage: shoulderPressStageImages[2],
+    steps: [
+      '双脚与髋同宽站立，两手持哑铃，核心与臀部轻收紧。',
+      '将哑铃举至肩侧，前臂保持垂直，手腕位于肘部上方。',
+      '向上推举至双手位于肩膀上方，保持肋骨下沉且不挺腰。',
+      '控制哑铃沿原轨迹下放至肩侧，全程保持躯干稳定。',
+    ],
+    tips: [
+      '脚掌踩稳，核心与臀部保持收紧',
+      '前臂保持垂直，手腕不要向后折',
+      '哑铃向肩膀正上方推举，顶端不要相碰',
+      '使用可控重量，肩部出现锐痛时立即停止',
+    ],
+    mistakes: ['挺腰借力', '手腕向后折', '顶端哑铃相碰'],
+    sets: '3组',
+    reps: '8–12次',
+    rest: '休息60–90秒',
+    visualGuide: {
+      stages: [
+        {
+          title: '持铃站稳',
+          cue: '双脚髋宽，核心与臀部收紧',
+          image: shoulderPressStageImages[0],
+        },
+        {
+          title: '举至肩侧',
+          cue: '前臂垂直，手腕位于肘部上方',
+          image: shoulderPressStageImages[1],
+        },
+        {
+          title: '向上推举',
+          cue: '双手推至肩膀正上方，肋骨下沉',
+          image: shoulderPressStageImages[2],
+        },
+        {
+          title: '控制下放',
+          cue: '沿原轨迹回落，躯干保持稳定',
+          image: shoulderPressStageImages[3],
+        },
+      ],
+      formCues: [
+        {
+          kind: 'spine',
+          title: '保持躯干稳定',
+          description: '核心收紧，肋骨下沉，避免挺腰借力',
+        },
+        {
+          kind: 'shoulder',
+          title: '肩胛自然上转',
+          description: '推举时肩胛自然活动，不要强行下压',
+        },
+        {
+          kind: 'elbow',
+          title: '肘腕保持对齐',
+          description: '前臂保持垂直，手腕位于肘部上方',
+        },
+        {
+          kind: 'target',
+          title: '三角肌 · 肱三头',
+          description: '向上推举时肩部与手臂共同发力',
+        },
+      ],
+    },
+    detail: {
+      analysis: {
+        image: `${shoulderPressAssetRoot}/analysis.webp`,
+        imageAlt: '站姿哑铃推举顶峰姿势与三角肌发力示意',
+        primaryMuscle: '三角肌前束',
+        supportingMuscles: ['三角肌中束', '肱三头肌'],
+        summary: '保持躯干稳定，将哑铃垂直推至肩膀上方，再缓慢下放。',
+        callouts: ['核心收紧，肋骨保持下沉', '前臂垂直，手腕保持中立', '双手推至肩膀正上方'],
+      },
+      steps: [
+        {
+          title: '站稳',
+          cue: '核心收紧',
+          description: '双脚髋宽，哑铃自然下垂',
+          image: shoulderPressStageImages[0],
+          imageAlt: '双手持哑铃自然站立准备推举',
+        },
+        {
+          title: '架铃',
+          cue: '前臂垂直',
+          description: '哑铃举至肩侧位置',
+          image: shoulderPressStageImages[1],
+          imageAlt: '哑铃位于肩侧且前臂保持垂直',
+        },
+        {
+          title: '推起',
+          cue: '垂直推举',
+          description: '双手推至肩膀上方',
+          image: shoulderPressStageImages[2],
+          imageAlt: '站姿将两只哑铃推至头顶',
+        },
+        {
+          title: '下放',
+          cue: '缓慢还原',
+          description: '沿原轨迹回到肩侧',
+          image: shoulderPressStageImages[3],
+          imageAlt: '控制两只哑铃缓慢下放至肩侧',
+        },
+      ],
+      keyPoints: [
+        {
+          icon: 'spine',
+          tone: 'blue',
+          title: '躯干稳定',
+          description: '核心与臀部收紧，避免挺腰',
+        },
+        {
+          icon: 'shoulder',
+          tone: 'green',
+          title: '肩胛自然',
+          description: '随手臂上举自然向上转动',
+        },
+        {
+          icon: 'elbow',
+          tone: 'orange',
+          title: '肘腕对齐',
+          description: '前臂垂直，手腕不要后折',
+        },
+        {
+          icon: 'tempo',
+          tone: 'blue',
+          title: '控制节奏',
+          description: '推起1秒 · 停1秒 · 下放2秒',
+        },
+      ],
+      mistakes: [
+        {
+          icon: 'lower-back',
+          tone: 'red',
+          title: '挺腰借力',
+          description: '肋骨外翻，腰部过度伸展',
+          correction: '收紧核心并减轻重量',
+        },
+        {
+          icon: 'elbow',
+          tone: 'red',
+          title: '手腕后折',
+          description: '重量偏离前臂支撑线',
+          correction: '保持手腕位于肘部上方',
+        },
+        {
+          icon: 'overload',
+          tone: 'red',
+          title: '哑铃相碰',
+          description: '顶端动作失去控制',
+          correction: '保持间距缓慢完成',
+        },
+      ],
+      prescription: [
+        { icon: 'sets', tone: 'blue', label: '组数', value: '3组' },
+        { icon: 'reps', tone: 'green', label: '次数', value: '8–12次' },
         { icon: 'rest', tone: 'orange', label: '休息', value: '60–90秒' },
       ],
     },
